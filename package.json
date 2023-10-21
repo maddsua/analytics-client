@@ -9,5 +9,9 @@
 	},
 	"dependencies": {
 		"typescript": "^5.2.2"
-	}
+	},
+	"files": [
+		"lib",
+		"dist"
+	]
 }
