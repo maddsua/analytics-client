@@ -1,0 +1,13 @@
+{
+	"name": "@maddsua/ga-client",
+	"version": "1.0.0",
+	"license": "MIT",
+	"main": "./dist/analytics.js",
+	"types": "./dist/analytics.d.ts",
+	"scripts": {
+		"build": "tsc"
+	},
+	"dependencies": {
+		"typescript": "^5.2.2"
+	}
+}
