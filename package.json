@@ -1,5 +1,6 @@
 {
 	"name": "@maddsua/ga-client",
+	"description": "Modular Google Analitycs loader",
 	"version": "1.0.0",
 	"license": "MIT",
 	"main": "./dist/analytics.js",
@@ -7,7 +8,7 @@
 	"scripts": {
 		"build": "tsc"
 	},
-	"dependencies": {
+	"dev-dependencies": {
 		"typescript": "^5.2.2"
 	},
 	"files": [
