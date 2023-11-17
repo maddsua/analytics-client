@@ -1,7 +1,7 @@
 interface WindowWithAnalytics extends Window {
 	dataLayer?: Array<object>;
 	gtag?: (command: 'js' | 'config' | 'event', eventName: any, eventParams?: object) => void;
-};
+}
 
 declare let window: WindowWithAnalytics;
 
@@ -9,7 +9,7 @@ interface LoaderInit {
 	tagid: string;
 	type?: 'gtag' | 'gtm';
 	trackClicks?: boolean;
-};
+}
 
 export const loadGoogleAnalytics = (props: LoaderInit) => {
 
