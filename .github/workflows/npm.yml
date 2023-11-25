@@ -6,7 +6,7 @@ on:
     paths: ['client/package.json']
 
 jobs:
-  deploy_package:
+  npm_publish_client:
     runs-on: ubuntu-latest
     defaults:
       run:
