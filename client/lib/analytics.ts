@@ -38,7 +38,7 @@ export const pushEvent = (eventID: string, props?: object, target?: CollectionTa
 		pushedSources++;
 	}
 
-	if (pushedSources) {
+	if (!pushedSources) {
 		console.warn(`Failed to push event "${eventID}": no targets initiated or matched (${target || 'all'})`);
 		return false;
 	}
