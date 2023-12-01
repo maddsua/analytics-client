@@ -8,7 +8,9 @@ declare let window: {
 	_fbq: MetaFbqFunction;
 } & Window;
 
-export const pushEvent = (eventID: string, props?: object) => {
+type CollectionTarget = 'google' | 'facebook';
+
+export const pushEvent = (eventID: string, props?: object, target?: CollectionTarget) => {
 
 	//	send eventID first character to upper case
 	if (eventID[0].toUpperCase() !== eventID[0]) {
@@ -17,13 +19,13 @@ export const pushEvent = (eventID: string, props?: object) => {
 
 	let pushedSources = 0;
 
-	if (window.dataLayer) {
+	if (window.dataLayer && (!target || target === 'google')) {
 		window.dataLayer.push(Object.assign({ 'event': eventID }, props || {}));
 		console.log(`Pushed event "${eventID}" to Google Analytics`);
 		pushedSources++;
 	}
 
-	if (window.fbq) {
+	if (window.fbq && (!target || target === 'facebook')) {
 		const trackType = [
 			'Contact','CustomizeProduct','Donate',
 			'FindLocation','InitiateCheckout','Lead',
@@ -37,7 +39,7 @@ export const pushEvent = (eventID: string, props?: object) => {
 	}
 
 	if (pushedSources) {
-		console.warn(`Failed to push event "${eventID}": no trackers initiated`);
+		console.warn(`Failed to push event "${eventID}": no targets initiated or matched (${target || 'all'})`);
 		return false;
 	}
 

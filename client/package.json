@@ -8,7 +8,7 @@
 		"fbq",
 		"gtag"
 	],
-	"version": "6.2.0",
+	"version": "6.2.1",
 	"license": "MIT",
 	"main": "./dist/analytics.js",
 	"types": "./dist/analytics.d.ts",
