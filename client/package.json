@@ -1,7 +1,14 @@
 {
 	"name": "@maddsua/analytics-client",
-	"description": "Modular Google Analitycs loader",
-	"version": "6.1.1",
+	"description": "Modular analitycs loader",
+	"keywords": [
+		"google analytics",
+		"meta pixel",
+		"ga",
+		"fbq",
+		"gtag"
+	],
+	"version": "6.2.0",
 	"license": "MIT",
 	"main": "./dist/analytics.js",
 	"types": "./dist/analytics.d.ts",
