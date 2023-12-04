@@ -1,4 +1,5 @@
 {
+	"type": "module",
 	"name": "@maddsua/analytics-client",
 	"description": "Modular analitycs loader",
 	"keywords": [
@@ -8,9 +9,8 @@
 		"fbq",
 		"gtag"
 	],
-	"version": "6.2.2",
+	"version": "6.2.3",
 	"license": "MIT",
-	"type": "module",
 	"main": "./dist/analytics.js",
 	"types": "./dist/analytics.d.ts",
 	"scripts": {
