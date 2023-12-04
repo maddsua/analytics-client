@@ -10,6 +10,7 @@
 	],
 	"version": "6.2.2",
 	"license": "MIT",
+	"type": "module",
 	"main": "./dist/analytics.js",
 	"types": "./dist/analytics.d.ts",
 	"scripts": {
