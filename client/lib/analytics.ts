@@ -10,36 +10,45 @@ declare let window: {
 
 type CollectionTarget = 'google' | 'facebook';
 
-export const pushEvent = (eventID: string, props?: object, target?: CollectionTarget) => {
+export const pushEvent = (eventName: string, props?: object, target?: CollectionTarget) => {
 
 	//	send eventID first character to upper case
-	if (eventID[0].toUpperCase() !== eventID[0]) {
-		eventID = eventID[0].toUpperCase() + eventID.slice(1);
+	if (eventName[0].toUpperCase() !== eventName[0]) {
+		eventName = eventName[0].toUpperCase() + eventName.slice(1);
 	}
 
 	let pushedSources = 0;
 
-	if (window.dataLayer && (!target || target === 'google')) {
-		window.dataLayer.push(Object.assign({ 'event': eventID }, props || {}));
-		console.log(`Pushed event "${eventID}" to Google Analytics`);
+	if (!target || target === 'google') {
+
+		if (typeof window.gtag === 'function') {
+			window.gtag('event', eventName, props);
+		} else {
+			if (!window.dataLayer) window.dataLayer = [];
+			window.dataLayer.push(Object.assign({ 'event': eventName }, props || {}));
+		}
+
+		console.log(`Pushed event "${eventName}" to Google Analytics`);
 		pushedSources++;
 	}
 
 	if (window.fbq && (!target || target === 'facebook')) {
+
 		const trackType = [
 			'Contact','CustomizeProduct','Donate',
 			'FindLocation','InitiateCheckout','Lead',
 			'Purchase','Schedule', 'Search',
 			'StartTrial','SubmitApplication',
 			'Subscribe','ViewContent'
-		].some(item => item === eventID) ? 'track' : 'trackCustom';
-		window.fbq(trackType, eventID, props);
-		console.log(`Pushed event "${eventID}" to Meta Pixel`);
+		].some(item => item === eventName) ? 'track' : 'trackCustom';
+
+		window.fbq(trackType, eventName, props);
+		console.log(`Pushed event "${eventName}" to Meta Pixel`);
 		pushedSources++;
 	}
 
 	if (!pushedSources) {
-		console.warn(`Failed to push event "${eventID}": no targets initiated or matched (${target || 'all'})`);
+		console.warn(`Failed to push event "${eventName}": no targets initiated or matched (${target || 'all'})`);
 		return false;
 	}
 
