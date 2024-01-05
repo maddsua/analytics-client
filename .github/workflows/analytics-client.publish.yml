@@ -6,7 +6,7 @@ on:
     paths: ['client/analytics/package.json']
 
 jobs:
-  npm_publish_client:
+  npm_publish:
     runs-on: ubuntu-latest
     defaults:
       run:

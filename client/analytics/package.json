@@ -9,7 +9,7 @@
 		"fbq",
 		"gtag"
 	],
-	"version": "6.3.0",
+	"version": "6.3.1",
 	"license": "MIT",
 	"main": "./dist/index.js",
 	"types": "./dist/index.d.ts",
