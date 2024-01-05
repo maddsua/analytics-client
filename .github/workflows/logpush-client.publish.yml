@@ -1,23 +1,23 @@
-name: Publish Client Package
+name: Publish Logpush/Client Package
 
 on:
   push:
     branches: ['main']
-    paths: ['client/package.json']
+    paths: ['client/logpush/package.json']
 
 jobs:
   npm_publish_client:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: client
+        working-directory: client/logpush
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v3
       with:
         node-version: 18
         registry-url: https://registry.npmjs.org/
-    - run: npm ci
+    - run: npm install
     - run: npm run build
     - run: npm publish --access public
       env:

@@ -1,0 +1,18 @@
+{
+	"type": "module",
+	"name": "@maddsua/logpush-client",
+	"description": "Client for remote logging service",
+	"version": "2.1.0",
+	"license": "MIT",
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"scripts": {
+		"build": "tsc"
+	},
+	"files": [
+		"dist"
+	],
+	"devDependencies": {
+		"typescript": "^5.3.2"
+	}
+}
