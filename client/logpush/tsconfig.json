@@ -1,9 +1,0 @@
-{
-	"compilerOptions": {
-		"lib": ["DOM", "ESNext"],
-		"target": "ES2017",
-		"outDir": "dist",
-		"declaration": true,
-		"strict": true
-	}
-}
