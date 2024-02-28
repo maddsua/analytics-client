@@ -1,5 +1,5 @@
 # npm garbage
 node_modules/
 *.tgz
-**/dist
+dist
 package-lock.json
