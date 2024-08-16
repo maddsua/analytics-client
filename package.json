@@ -1,7 +1,7 @@
 {
 	"type": "module",
 	"name": "@maddsua/analytics-client",
-	"description": "ESM-based GA and Meta Pixel loader",
+	"description": "TypeScript wrapper for GA and Meta Pixel",
 	"keywords": [
 		"google analytics",
 		"meta pixel",
@@ -9,7 +9,7 @@
 		"fbq",
 		"gtag"
 	],
-	"version": "6.3.3",
+	"version": "6.3.4",
 	"license": "MIT",
 	"main": "./dist/index.js",
 	"types": "./dist/index.d.ts",
